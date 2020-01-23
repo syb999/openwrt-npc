@@ -33,7 +33,7 @@ PKG_LICENSE:=Apache-2.0
 
 PKG_SOURCE_URL:=https://github.com/cnlh/nps/releases/download/v$(PKG_VERSION)
 PKG_SOURCE:=linux_$(NPC_ARCH)_client.tar.gz
-PKG_BUILD_DIR:=$(BUILD_DIR)/nps
+PKG_BUILD_DIR:=$(BUILD_DIR)/npc
 PKG_HASH:=skip
 
 include $(INCLUDE_DIR)/package.mk
