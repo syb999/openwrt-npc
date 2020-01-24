@@ -49,9 +49,10 @@ endef
 
 
 define Package/$(PKG_NAME)/description
-npc is a fast reverse proxy to help you expose a local server behind a NAT or firewall to the internet
+	npc is a fast reverse proxy to help you expose a local server behind a NAT or firewall to the internet
 endef
 
+UNPACK_CMD=tar -zxvf "$(DL_DIR)/$(PKG_SOURCE)" -C $(PKG_BUILD_DIR)
 define Build/Prepare
 	$(PKG_UNPACK)
 endef
@@ -64,7 +65,7 @@ endef
 
 define Package/$(PKG_NAME)/install
 	$(INSTALL_DIR) $(1)/usr/bin
-	$(INSTALL_BIN) $(PKG_BUILD_DIR)/npc $(1)/usr/bin/
+	$(INSTALL_BIN) $(PKG_BUILD_DIR)/nps/npc $(1)/usr/bin/
 endef
 
 $(eval $(call BuildPackage,$(PKG_NAME)))
